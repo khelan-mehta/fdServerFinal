@@ -28,13 +28,7 @@ import { UserService } from 'src/services/user.service';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
-const s3 = new S3Client({
-  region: 'eu-north-1',
-  credentials: {
-    accessKeyId: 'AKIAVVANBAJNCJ3LVIJC',
-    secretAccessKey: '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',
-  },
-});
+
 
 @Controller('auth')
 export class AuthController {
@@ -269,7 +263,7 @@ export class AuthController {
     return { message: 'KYC status updated successfully', user: updatedUser };
   }
 
-  @Get('fetch-url/fetch')
+  /* @Get('fetch-url/fetch')
   async generateUploadURL() {
     const bucketName = 'direct-upload-s3-khelan';
     const randomFileName = `image-${uuidv4()}.png`;
@@ -280,7 +274,7 @@ export class AuthController {
 
     const uploadURL = await getSignedUrl(s3, command, { expiresIn: 60 });
     return { uploadURL };
-  }
+  } */
 
   // Endpoint for password reset
   @Post('reset-password')
