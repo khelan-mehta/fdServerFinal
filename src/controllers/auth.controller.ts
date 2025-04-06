@@ -191,7 +191,7 @@ export class AuthController {
     const encodedDeviceIds = encodeURIComponent(JSON.stringify(deviceIdArray));
 
     // Redirect to the appropriate page with the access token, user ID, and deviceId array
-    const redirectUrl = `${redirectBaseUrl}?access_token=${accessToken}&userId=${user.id}&deviceIds=${encodedDeviceIds}`;
+    const redirectUrl = `${redirectBaseUrl}?access_token=${accessToken}&userId=${user.id}&deviceIds=${encodedDeviceIds}`; 
 
     return res.redirect(redirectUrl);
   }
